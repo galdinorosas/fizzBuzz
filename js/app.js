@@ -1,33 +1,47 @@
 
 $(document).ready(function() {
-	for (var i =1;i<101;i++){
+
+	var userInput = prompt("Please enter a number in the box below.","Only whole numbers please");
+
+	userInput = parseInt(userInput);
+	userInput = userInput-(userInput%1);
+
+	userInput = +userInput;
+
+
+	var response = "";
+
+	function display(input){
+		var p = document.createElement("p");
+		p.innerHTML=input;
+		$(".container").append(p);
+
+	};
+
+	var p = document.createElement("p");
+
+	
+	for (var i =1;i<userInput+1;i++){
 
 
 		if(i%3==0 && i%5==0){
-			var p = document.createElement("p");
-			p.innerHTML=("fizz buzz");
-			$(".container").append(p);
+
+			display("fizz buzz");
 			
 		}
 		else if(i%3==0){
-				var p = document.createElement("p");
-				p.innerHTML=("fizz");
-				$(".container").append(p);
+				display("fizz");
 		}
 
 		else if (i%5==0){
 			
-			var p = document.createElement("p");
-				p.innerHTML=("buzz");
-				$(".container").append(p);
+			display("buzz");
 		}
 		
 
 		else{
 			
-			var p = document.createElement("p");
-				p.innerHTML=i;
-				$(".container").append(p);
+			display(i);
 		}
 
 
